@@ -53,7 +53,7 @@ if __name__ == '__main__':
 		PASSENGERS = int(sys.argv[1])
 		CARS = int(sys.argv[2])
 	else:
-		print("[E] Program usage: python guesswho.py <PASSENGERS> <CARS>")
+		print("[E] Program usage: python concurrence.py <PASSENGERS> <CARS>")
 		exit()
 	pool = ActivePool()
 	s = threading.Semaphore(CARS)
