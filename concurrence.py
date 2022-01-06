@@ -45,6 +45,7 @@ def passenger(s, pool, id):
 		pool.giveARide(name)
 		ride_time = random.randint(5,10)
 		for r in range(ride_time):
+			# logging.debug(f"Passenger {id} is giving a ride... {r}")
 			time.sleep(1)
 		pool.waitPassenger(name)
 
@@ -58,5 +59,5 @@ if __name__ == '__main__':
 	pool = ActivePool()
 	s = threading.Semaphore(CARS)
 	for i in range(PASSENGERS):
-		t = threading.Thread(target=passenger, name=f"Passenger {i + 1}", args=(s, pool, i))
+		t = threading.Thread(target=passenger, name=f"Passenger {i + 1}", args=(s, pool, i+1))
 		t.start()
